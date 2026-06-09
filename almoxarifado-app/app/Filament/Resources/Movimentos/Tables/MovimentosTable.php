@@ -23,7 +23,7 @@ class MovimentosTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('produto_id')
+                TextColumn::make('produto.nome')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('quantidade')

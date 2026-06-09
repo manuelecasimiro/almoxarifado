@@ -12,9 +12,13 @@ class MovimentoForm
     {
         return $schema
             ->components([
-                TextInput::make('produto_id')
-                    ->required()
-                    ->numeric(),
+                // TextInput::make('produto_id')
+                Select::make("produto_id")
+                    ->label('produto')
+                    ->relationship(name: 'produto', titleAttribute: 'nome')
+                    ->searchable() // permite pesquisar pelo nome
+                    ->preload() // carrega a lista automaticamente
+                    ->required(),
                 TextInput::make('quantidade')
                     ->required()
                     ->numeric(),
